@@ -1,0 +1,17 @@
+TerritoryID,Name,Region,District
+TERR001,New England - Sector A,East,New England
+TERR002,New England - Sector B,East,New England
+TERR003,Mid-Atlantic - Sector A,East,Mid-Atlantic
+TERR004,Mid-Atlantic - Sector B,East,Mid-Atlantic
+TERR005,Pacific Northwest - Sector A,West,Pacific Northwest
+TERR006,Pacific Northwest - Sector B,West,Pacific Northwest
+TERR007,California - Sector A,West,California
+TERR008,California - Sector B,West,California
+TERR009,Great Lakes - Sector A,Midwest,Great Lakes
+TERR010,Great Lakes - Sector B,Midwest,Great Lakes
+TERR011,Plains - Sector A,Midwest,Plains
+TERR012,Plains - Sector B,Midwest,Plains
+TERR013,Southeast - Sector A,South,Southeast
+TERR014,Southeast - Sector B,South,Southeast
+TERR015,Texas - Sector A,South,Texas
+TERR016,Texas - Sector B,South,Texas

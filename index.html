@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Territory & Incentive Compensation Analytics Pipeline</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Chart.js for data visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div id="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div>
+        <div class="brand-section">
+          <div class="brand-logo">Φ</div>
+          <div class="brand-name">
+            PharmaPipe
+            <span>Sales Operations ETL</span>
+          </div>
+        </div>
+        
+        <ul class="nav-links">
+          <li class="nav-item active" data-tab="dashboard">
+            <button class="nav-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z" />
+              </svg>
+              BI Dashboard
+            </button>
+          </li>
+          <li class="nav-item" data-tab="schemas">
+            <button class="nav-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              Database Schemas
+            </button>
+          </li>
+          <li class="nav-item" data-tab="uploader">
+            <button class="nav-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+              Data Uploader
+            </button>
+          </li>
+          <li class="nav-item" data-tab="code">
+            <button class="nav-button">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              SQL & ETL Code
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <footer>
+        <p>Sales Territory & IC Pipeline</p>
+        <p style="margin-top: 4px; opacity: 0.5;">v1.0.0 (Browser ETL Sim)</p>
+      </footer>
+    </aside>
+
+    <!-- Main Content Workspace -->
+    <main class="main-workspace">
+      
+      <!-- Top Header Bar -->
+      <header class="top-header">
+        <div class="page-title-section">
+          <h1 id="page-title-display">Interactive BI Dashboard</h1>
+          <p id="page-subtitle-display">Pharma Sales Representative Alignment & Incentive Compensation Analysis</p>
+        </div>
+        
+        <div class="top-actions">
+          <button id="btn-restore-preset" class="btn" title="Reset dataset to synthetic preset">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7.89H18v3" />
+            </svg>
+            Reset Preset
+          </button>
+          <button id="btn-random-load" class="btn btn-primary" title="Generate and load new random synthetic data">
+            Generate Random Load
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Canvas Area -->
+      <section class="canvas-area">
+
+        <!-- 1. DASHBOARD TAB PANES -->
+        <div id="tab-dashboard" class="tab-pane active">
+          
+          <!-- Filter Card Pane -->
+          <div class="filter-pane-card">
+            <div class="filter-group">
+              <label for="filter-region">Region</label>
+              <select id="filter-region" class="filter-select">
+                <option value="All">All Regions</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+                <option value="Midwest">Midwest</option>
+                <option value="South">South</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="filter-district">District</label>
+              <select id="filter-district" class="filter-select">
+                <option value="All">All Districts</option>
+                <!-- Dynamically Hydrated -->
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="filter-rep">Representative</label>
+              <select id="filter-rep" class="filter-select">
+                <option value="All">All Representatives</option>
+                <!-- Dynamically Hydrated -->
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="filter-specialty">Physician Specialty</label>
+              <select id="filter-specialty" class="filter-select">
+                <option value="All">All Specialties</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Oncology">Oncology</option>
+                <option value="Pulmonology">Pulmonology</option>
+                <option value="General Practice">General Practice</option>
+              </select>
+            </div>
+            <button id="btn-clear-filters" class="btn" style="height:38px; padding:0 12px;">Reset Filters</button>
+          </div>
+
+          <!-- KPI Metrics Row -->
+          <div class="kpi-row">
+            <div class="kpi-card" id="kpi-sales">
+              <div class="kpi-title">Total Sales Revenue</div>
+              <div class="kpi-value" id="val-total-sales">$0.00</div>
+              <div class="kpi-subtitle">
+                Quota Attainment: <span id="val-quota-attainment" class="trend-up">0%</span>
+              </div>
+            </div>
+            <div class="kpi-card cyan" id="kpi-calls">
+              <div class="kpi-title">Call-Plan Coverage</div>
+              <div class="kpi-value" id="val-call-coverage">0.0%</div>
+              <div class="kpi-subtitle">
+                Target: <span id="val-total-targets">0</span> | Completed: <span id="val-total-completed">0</span>
+              </div>
+            </div>
+            <div class="kpi-card green" id="kpi-incentives">
+              <div class="kpi-title">Total Incentive Payout</div>
+              <div class="kpi-value" id="val-total-incentives">$0.00</div>
+              <div class="kpi-subtitle">
+                Avg Rep Payout: <span id="val-avg-payout" style="color: #10b981; font-weight:700;">$0</span>
+              </div>
+            </div>
+            <div class="kpi-card amber" id="kpi-reps">
+              <div class="kpi-title">Active Reps</div>
+              <div class="kpi-value" id="val-active-reps">0</div>
+              <div class="kpi-subtitle">
+                Avg Sales/Rep: <span id="val-avg-sales" style="color: #f59e0b; font-weight:700;">$0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row -->
+          <div class="charts-row">
+            <!-- Left Chart Card -->
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <div>
+                  <div class="chart-card-title">Sales Actual vs Quota Attainment by Territory</div>
+                  <div class="chart-card-subtitle">Aggregated territorial sales performance comparison</div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="chart-sales-territory"></canvas>
+              </div>
+            </div>
+
+            <!-- Right Chart Card -->
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <div>
+                  <div class="chart-card-title">Call plan activity coverage by specialty</div>
+                  <div class="chart-card-subtitle">Completed vs Target interactions by medical target specialty</div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="chart-coverage-specialty"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="charts-row" style="grid-template-columns: 1fr 1fr;">
+            <!-- Quota Attainment Scatter Chart -->
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <div>
+                  <div class="chart-card-title">Representative Performance Grid</div>
+                  <div class="chart-card-subtitle">Quota Attainment % vs Call Plan Coverage %</div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="chart-rep-performance"></canvas>
+              </div>
+            </div>
+            
+            <!-- Incentive Payout Breakdown Chart -->
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <div>
+                  <div class="chart-card-title">Base Commission vs Incentive Bonus Payouts</div>
+                  <div class="chart-card-subtitle">Illustrates payouts generated from accelerator tiers</div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="chart-payout-breakdown"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rep Performance Data Table -->
+          <div class="table-card">
+            <div class="table-header-row">
+              <div>
+                <h2 style="font-size: 15px; font-weight: 700; color: #fff;">Representative Detail Ledger</h2>
+                <p style="font-size: 11px; color: var(--text-muted);">Sortable records mapping rep alignment, sales achievements, and incentive results.</p>
+              </div>
+              <input type="text" id="rep-table-search" class="table-search-input" placeholder="Search representative name or title...">
+            </div>
+            <div class="data-table-container">
+              <table id="rep-data-table" class="data-table">
+                <thead>
+                  <tr>
+                    <th data-sort="name">Name</th>
+                    <th data-sort="region">Region</th>
+                    <th data-sort="district">District</th>
+                    <th data-sort="sales">Actual Sales</th>
+                    <th data-sort="quota">Quota</th>
+                    <th data-sort="attainment">Attainment %</th>
+                    <th data-sort="coverage">Call Coverage %</th>
+                    <th data-sort="commission">Base Comm.</th>
+                    <th data-sort="bonus">Bonus Payout</th>
+                    <th data-sort="payout">Total Payout</th>
+                  </tr>
+                </thead>
+                <tbody id="rep-table-body">
+                  <!-- Dynamically Hydrated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. SCHEMAS TAB PANES -->
+        <div id="tab-schemas" class="tab-pane">
+          <div class="schema-dashboard">
+            <div id="schema-info-box">
+              <h3>Database Architecture</h3>
+              <p>Hover over any table header or column attribute below to trace foreign key relationships, dimensions mappings, and join routes between schemas.</p>
+            </div>
+            <div class="schema-split-view">
+              <!-- OLTP Relational source schema -->
+              <div class="schema-panel">
+                <div class="schema-panel-header">
+                  <h2>Source OLTP Relational Schema</h2>
+                  <p style="font-size:11px;color:var(--text-muted);margin-top:2px;">Normalized transactional schema optimized for daily operational integrity</p>
+                </div>
+                <div id="schema-canvas-oltp" class="schema-canvas">
+                  <!-- Hydrated by schema_visualizer.js -->
+                </div>
+              </div>
+
+              <!-- OLAP Dimensional Star schema -->
+              <div class="schema-panel">
+                <div class="schema-panel-header">
+                  <h2>Target OLAP Star Schema</h2>
+                  <p style="font-size:11px;color:var(--text-muted);margin-top:2px;">Denormalized dimensional database model optimized for high performance BI reports</p>
+                </div>
+                <div id="schema-canvas-olap" class="schema-canvas">
+                  <!-- Hydrated by schema_visualizer.js -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. DATA UPLOADER TAB PANE -->
+        <div id="tab-uploader" class="tab-pane">
+          <div class="upload-grid">
+            
+            <!-- Upload Panel -->
+            <div class="upload-card">
+              <h2 style="font-size: 16px; font-weight:700; margin-bottom:6px;">Upload Custom Relational Data</h2>
+              <p style="font-size: 12px; color: var(--text-secondary); margin-bottom:16px;">
+                Replace the active transactional database by dragging-and-dropping CSV formatted files. The client-side ETL engine will parse inputs, execute relational joins, calculate tiered IC payouts, and instantly refresh the BI reports.
+              </p>
+              
+              <div id="upload-dropzone" class="dropzone">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                <h3>Drag & Drop CSVs here</h3>
+                <p>or click to select files from your system</p>
+                <p style="font-size:9px; color: var(--text-secondary); margin-top:8px;">Accepts: reps.csv, territories.csv, sales.csv, quotas.csv, calls.csv, call_plans.csv</p>
+              </div>
+              <input type="file" id="upload-file-input" class="hidden-input" multiple accept=".csv">
+
+              <!-- Template Downloads -->
+              <div style="margin-top: 24px;">
+                <h3 style="font-size: 13px; font-weight:700; margin-bottom:8px;">Download CSV Import Templates</h3>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom:12px;">Use these pre-formatted files containing headers matching the OLTP tables configuration.</p>
+                <ul class="upload-templates-list">
+                  <li>
+                    <span>reps.csv (Sales Reps)</span>
+                    <button class="btn btn-sm" onclick="downloadTemplate('reps')">Get Template</button>
+                  </li>
+                  <li>
+                    <span>sales.csv (Transactions Ledger)</span>
+                    <button class="btn btn-sm" onclick="downloadTemplate('sales')">Get Template</button>
+                  </li>
+                  <li>
+                    <span>quotas.csv (Representative Monthly Targets)</span>
+                    <button class="btn btn-sm" onclick="downloadTemplate('quotas')">Get Template</button>
+                  </li>
+                  <li>
+                    <span>calls.csv (Completed Rep Doctor Calls)</span>
+                    <button class="btn btn-sm" onclick="downloadTemplate('calls')">Get Template</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Console Log -->
+            <div class="upload-card" style="display:flex; flex-direction:column;">
+              <h2 style="font-size: 16px; font-weight:700; margin-bottom:6px;">Pipeline Execution Console</h2>
+              <p style="font-size: 12px; color: var(--text-secondary); margin-bottom:12px;">
+                Real-time compilation logs generated by the client ETL stored procedures. Shows record mappings, validation warnings, and processing speeds.
+              </p>
+              
+              <div class="log-terminal" id="pipeline-console">
+                [INFO] System initialized. Ready to process datasets.
+                [INFO] Loaded Default Synthetic Dataset.
+                [INFO] 16 Reps, 8 Territories, 114 Physicians pre-mapped in relational operational schemas.
+                [INFO] Fact tables populated and verified. Dashboard synced successfully.
+              </div>
+              
+              <div style="margin-top: 16px; display:flex; gap:12px;">
+                <button id="btn-run-manual-etl" class="btn btn-primary" style="flex-grow:1;">Re-Run ETL Stored Procedures</button>
+                <button id="btn-clear-logs" class="btn" style="width:100px;">Clear Logs</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 4. CODE VIEW PANEL TAB PANE -->
+        <div id="tab-code" class="tab-pane">
+          <div class="code-viewer-layout">
+            <!-- Left Code Files List -->
+            <ul class="code-menu">
+              <li class="code-menu-item active" data-script="ddl_oltp">OLTP Schema DDL</li>
+              <li class="code-menu-item" data-script="ddl_olap">OLAP Schema DDL</li>
+              <li class="code-menu-item" data-script="etl_procedures">ETL Comp Stored Proc</li>
+              <li class="code-menu-item" data-script="query_tuning">Query & Deadlock Tuning</li>
+            </ul>
+
+            <!-- Right Editor Panel -->
+            <div class="code-editor-panel">
+              <div class="code-editor-header">
+                <h3 id="code-script-title">OLTP Schema DDL</h3>
+                <button id="btn-copy-code" class="btn" style="padding:4px 8px; font-size:11px;">Copy Code</button>
+              </div>
+              <pre class="code-pre"><code id="code-display-block">-- SQL Code goes here</code></pre>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Script Declarations -->
+  <script src="synthetic_data.js"></script>
+  <script src="database.js"></script>
+  <script src="schema_visualizer.js"></script>
+  <script src="stored_procedures.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

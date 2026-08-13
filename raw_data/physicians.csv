@@ -1,0 +1,103 @@
+PhysicianID,FirstName,LastName,Specialty,TerritoryID
+PHY0001,Susan,Ramirez,Oncology,TERR001
+PHY0002,Daniel,Wilson,General Practice,TERR001
+PHY0003,Linda,Rodriguez,General Practice,TERR001
+PHY0004,Susan,Martinez,Oncology,TERR001
+PHY0005,Richard,Martinez,Cardiology,TERR001
+PHY0006,David,Wilson,General Practice,TERR001
+PHY0007,Margaret,Young,General Practice,TERR001
+PHY0008,Sandra,Moore,General Practice,TERR002
+PHY0009,Margaret,Hernandez,Neurology,TERR002
+PHY0010,Margaret,Gonzalez,Neurology,TERR002
+PHY0011,John,Perez,Neurology,TERR002
+PHY0012,Joseph,Allen,Pulmonology,TERR002
+PHY0013,Charles,Thomas,Pulmonology,TERR003
+PHY0014,Robert,Gonzalez,Cardiology,TERR003
+PHY0015,Matthew,Young,Cardiology,TERR003
+PHY0016,Thomas,Jackson,General Practice,TERR003
+PHY0017,Barbara,Wilson,Neurology,TERR003
+PHY0018,Michael,Allen,General Practice,TERR003
+PHY0019,Margaret,Brown,Cardiology,TERR003
+PHY0020,Michael,Moore,Oncology,TERR004
+PHY0021,Jennifer,Martin,Neurology,TERR004
+PHY0022,Lisa,Rodriguez,General Practice,TERR004
+PHY0023,Joseph,White,Pulmonology,TERR004
+PHY0024,Thomas,Allen,Cardiology,TERR004
+PHY0025,Jennifer,Robinson,Neurology,TERR004
+PHY0026,Nancy,Moore,Oncology,TERR004
+PHY0027,Susan,Robinson,Neurology,TERR005
+PHY0028,Elizabeth,Miller,Neurology,TERR005
+PHY0029,Lisa,Allen,Oncology,TERR005
+PHY0030,Joseph,Lopez,Oncology,TERR005
+PHY0031,Joseph,Lee,Neurology,TERR005
+PHY0032,Michael,Harris,Pulmonology,TERR006
+PHY0033,Robert,Jackson,General Practice,TERR006
+PHY0034,Jessica,Williams,Cardiology,TERR006
+PHY0035,Charles,Martin,Cardiology,TERR006
+PHY0036,Sarah,Hernandez,Oncology,TERR006
+PHY0037,Michael,Jackson,Neurology,TERR006
+PHY0038,Barbara,Walker,Oncology,TERR007
+PHY0039,Jessica,Rodriguez,Cardiology,TERR007
+PHY0040,Charles,Harris,Neurology,TERR007
+PHY0041,Nancy,Rodriguez,General Practice,TERR007
+PHY0042,Christopher,Jackson,Oncology,TERR007
+PHY0043,Linda,Lopez,General Practice,TERR008
+PHY0044,John,Jones,Cardiology,TERR008
+PHY0045,James,Hernandez,General Practice,TERR008
+PHY0046,James,Allen,General Practice,TERR008
+PHY0047,James,Anderson,Pulmonology,TERR008
+PHY0048,Betty,Gonzalez,Cardiology,TERR008
+PHY0049,James,Thompson,Pulmonology,TERR008
+PHY0050,Mary,Clark,Neurology,TERR009
+PHY0051,Lisa,Taylor,Neurology,TERR009
+PHY0052,William,Lopez,Cardiology,TERR009
+PHY0053,Susan,Wilson,Oncology,TERR009
+PHY0054,Lisa,Lee,General Practice,TERR009
+PHY0055,Richard,Sanchez,General Practice,TERR009
+PHY0056,Charles,Gonzalez,General Practice,TERR009
+PHY0057,Mary,Ramirez,Oncology,TERR010
+PHY0058,William,Miller,Oncology,TERR010
+PHY0059,Robert,Gonzalez,General Practice,TERR010
+PHY0060,Margaret,Miller,General Practice,TERR010
+PHY0061,Anthony,Martinez,Pulmonology,TERR010
+PHY0062,Richard,Robinson,General Practice,TERR010
+PHY0063,Nancy,Young,Pulmonology,TERR010
+PHY0064,Betty,Gonzalez,Neurology,TERR010
+PHY0065,Elizabeth,Rodriguez,Cardiology,TERR011
+PHY0066,Sandra,Martinez,Cardiology,TERR011
+PHY0067,Mary,Lewis,Neurology,TERR011
+PHY0068,Sandra,Ramirez,Cardiology,TERR011
+PHY0069,Margaret,Ramirez,Cardiology,TERR011
+PHY0070,Barbara,Lewis,Cardiology,TERR011
+PHY0071,Linda,Clark,Pulmonology,TERR011
+PHY0072,Sandra,Davis,Oncology,TERR012
+PHY0073,Charles,Gonzalez,Pulmonology,TERR012
+PHY0074,Robert,Thomas,Oncology,TERR012
+PHY0075,Christopher,Martinez,Pulmonology,TERR012
+PHY0076,Jennifer,Martin,Cardiology,TERR012
+PHY0077,Mark,Thompson,Pulmonology,TERR012
+PHY0078,Anthony,Thomas,Pulmonology,TERR013
+PHY0079,Patricia,Sanchez,General Practice,TERR013
+PHY0080,William,Anderson,Neurology,TERR013
+PHY0081,Linda,Ramirez,Neurology,TERR013
+PHY0082,Nancy,Miller,Neurology,TERR013
+PHY0083,Christopher,Lee,General Practice,TERR013
+PHY0084,Betty,Perez,Oncology,TERR013
+PHY0085,Lisa,Sanchez,Cardiology,TERR014
+PHY0086,William,Allen,Neurology,TERR014
+PHY0087,Jennifer,Harris,General Practice,TERR014
+PHY0088,Mark,Thompson,Neurology,TERR014
+PHY0089,Richard,Martinez,Neurology,TERR014
+PHY0090,Joseph,Walker,Pulmonology,TERR014
+PHY0091,Mary,Jackson,Oncology,TERR014
+PHY0092,John,Williams,Neurology,TERR015
+PHY0093,Mary,Miller,Neurology,TERR015
+PHY0094,John,Lee,Pulmonology,TERR015
+PHY0095,Richard,Rodriguez,Oncology,TERR015
+PHY0096,Thomas,Thompson,General Practice,TERR015
+PHY0097,Richard,Thomas,Oncology,TERR015
+PHY0098,Lisa,Hernandez,Oncology,TERR016
+PHY0099,David,Perez,Oncology,TERR016
+PHY0100,Lisa,Wilson,Neurology,TERR016
+PHY0101,Michael,Williams,General Practice,TERR016
+PHY0102,Anthony,Williams,Pulmonology,TERR016

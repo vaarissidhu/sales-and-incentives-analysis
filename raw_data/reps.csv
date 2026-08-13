@@ -1,0 +1,17 @@
+RepID,FirstName,LastName,Title,Email,Phone,HireDate,Active
+REP001,Sarah,Conner,Territory Sales Representative,sarah.conner@pharmapipe.com,555-646-8014,2024-03-22,1
+REP002,John,Smith,Territory Sales Representative,john.smith@pharmapipe.com,555-302-7219,2024-06-24,1
+REP003,David,Miller,Territory Sales Representative,david.miller@pharmapipe.com,555-686-7296,2024-07-26,1
+REP004,Emma,Davis,Territory Sales Representative,emma.davis@pharmapipe.com,555-812-5302,2024-06-07,0
+REP005,James,Wilson,Territory Sales Representative,james.wilson@pharmapipe.com,555-808-6103,2024-10-04,1
+REP006,Olivia,Taylor,Territory Sales Representative,olivia.taylor@pharmapipe.com,555-881-1771,2024-04-17,1
+REP007,Robert,Anderson,Territory Sales Representative,robert.anderson@pharmapipe.com,555-396-9016,2024-02-26,1
+REP008,Sophia,Thomas,Territory Sales Representative,sophia.thomas@pharmapipe.com,555-543-1921,2024-10-23,1
+REP009,Michael,White,Territory Sales Representative,michael.white@pharmapipe.com,555-802-7611,2024-07-07,0
+REP010,Isabella,Martin,Territory Sales Representative,isabella.martin@pharmapipe.com,555-740-6030,2024-11-04,1
+REP011,William,Jackson,Territory Sales Representative,william.jackson@pharmapipe.com,555-803-4806,2024-08-05,1
+REP012,Mia,Thompson,Territory Sales Representative,mia.thompson@pharmapipe.com,555-634-4819,2024-08-04,1
+REP013,Charles,Garcia,Senior Executive Sales Representative,charles.garcia@pharmapipe.com,555-771-6073,2024-06-08,1
+REP014,Emily,Martinez,Senior Executive Sales Representative,emily.martinez@pharmapipe.com,555-541-5219,2024-04-17,1
+REP015,Thomas,Robinson,Senior Executive Sales Representative,thomas.robinson@pharmapipe.com,555-285-4328,2024-04-24,1
+REP016,Ava,Clark,Senior Executive Sales Representative,ava.clark@pharmapipe.com,555-933-7850,2024-03-08,1
